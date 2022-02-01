@@ -12,7 +12,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {  
         http  
             .authorizeRequests()
-            	.antMatchers("/api").hasRole("user")
             .anyRequest().authenticated()  
             .and()  
             .httpBasic();  
@@ -22,7 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {  
         auth.inMemoryAuthentication()  
             .withUser("user")  
-            .password("user") // Spring Security 5 requires specifying the password storage format  
+            .password("{noop}pass") // Spring Security 5 requires specifying the password storage format  
             .roles("USER");  
     }  
 

@@ -10,7 +10,7 @@ public class WebController {
     @RequestMapping("/")
     @ResponseBody
     public String index() {
-        return "Siirry /api sivulle!";
+        return "Siirry /api/ sivulle!";
     }
 
 }
