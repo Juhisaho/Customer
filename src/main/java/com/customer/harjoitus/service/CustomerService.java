@@ -20,14 +20,14 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public List<Customer> getTodos() {
+    public List<Customer> getCustomers() {
         List<Customer> customers = new ArrayList<>();
         customerRepository.findAll().forEach(customers::add);
         return customers;
     }
 
     @Override
-    public Customer getTodoById(Long id) {
+    public Customer getCustById(Long id) {
         return customerRepository.findById(id).get();
     }
 
@@ -37,21 +37,21 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void updateTodo(Long id, Customer customer) {
-        Customer todoOg = customerRepository.findById(id).get();
+    public void updateCust(Long id, Customer customer) {
+        Customer customerOg = customerRepository.findById(id).get();
 //        todoOg.setTodoStatus(todo.getTodoStatus());
-        todoOg.setCustomerLastName(customer.getCustomerLastName());
-        todoOg.setCustomerFirstName(customer.getCustomerFirstName());
-        todoOg.setCustomerAddress(customer.getCustomerAddress());
-        todoOg.setCustomerCity(customer.getCustomerCity());
-        todoOg.setCustomerPostcode(customer.getCustomerPostcode());
-        todoOg.setPhone(customer.getPhone());
-        todoOg.setEmail(customer.getEmail());
-        customerRepository.save(todoOg);
+        customerOg.setCustomerLastName(customer.getCustomerLastName());
+        customerOg.setCustomerFirstName(customer.getCustomerFirstName());
+        customerOg.setCustomerAddress(customer.getCustomerAddress());
+        customerOg.setCustomerCity(customer.getCustomerCity());
+        customerOg.setCustomerPostcode(customer.getCustomerPostcode());
+        customerOg.setPhone(customer.getPhone());
+        customerOg.setEmail(customer.getEmail());
+        customerRepository.save(customerOg);
     }
     
     @Override
-    public void deleteTodo(Long id) {
+    public void deleteCust(Long id) {
         customerRepository.deleteById(id);
     }
 

@@ -5,13 +5,13 @@ import java.util.List;
 import com.customer.harjoitus.model.Customer;
 
 public interface ICustomerService {
-    List<Customer> getTodos();
+    List<Customer> getCustomers();
 
-    Customer getTodoById(Long id);
+    Customer getCustById(Long id);
 
     Customer insert(Customer customer);
 
-    void updateTodo(Long id, Customer customer);
+    void updateCust(Long id, Customer customer);
 
-    void deleteTodo(Long id);
+    void deleteCust(Long id);
 }

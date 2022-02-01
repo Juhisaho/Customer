@@ -32,6 +32,13 @@ public class Customer {
 	private String customerCity;
 	private String phone;
 	
+	@CreationTimestamp
+    @Column(updatable = false)
+    Timestamp dateCreated;
+
+    @UpdateTimestamp
+    Timestamp lastModified;
+    
 	@Column(name="email", nullable=false, unique=true)
 	private String email;
 
