@@ -11,6 +11,7 @@ import com.customer.harjoitus.service.CustomerService;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("api/customer")
 public class CustomerController {
@@ -52,5 +53,6 @@ public class CustomerController {
         customerService.deleteCust(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+   
 
 }
